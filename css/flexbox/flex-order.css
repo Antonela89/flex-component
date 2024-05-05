@@ -1,0 +1,26 @@
+.flexOrder {
+    display:flex;
+    gap: 5rem;
+}
+
+.flexOrder img {
+    border-radius: 50%;
+}
+
+/* manera explicita */
+/* .flexOrder:nth-child(even) p {
+    order: 1;
+}
+
+.flexOrder:nth-child(even) img {
+    order: 2;
+} */
+
+/* forma tacita */
+/* .flexOrder:nth-child(even) p {
+    order: -1;
+} */
+
+.flexOrder:nth-child(even) {
+    flex-direction: row-reverse;
+}

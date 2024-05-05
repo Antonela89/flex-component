@@ -1,0 +1,86 @@
+.flex-grow {
+    display: flex;
+}
+
+/* definiciones */
+/*flex-grow: capacidad de cuanto se agranda, va del 0 a 100%, el 100% se representa con 1*/
+/*flex-shrink: capacidad de cuanto se achique, valor por defecto: 1*/
+/*flex-basis: base flexible, tamaño por defecto de un elemento, por defecto su valor es auto*/
+
+/* .flex-grow > * {
+    border: 1px solid red !important;
+    flex-grow: 1;
+    flex-basis: 100px ;
+    padding: 0 !important;
+}
+
+.flex-grow > p {
+    border: 1px solid green !important;
+    flex-basis: 50px;
+} */
+
+/*como funciona flex-basis
+El contenedor wrapper tiene un ancho de 1024px
+a esa medida debo restarle la sumataria de bases flexibles de cada elemento (100 + 100 + 50 = 250): 1024-250
+y debo dividir el resultado entre la cantidad de elementos (3): (1024-250) /3 = 258
+al resultado debo sumarle cada base flexible de cada elemento para obtener el ancho final:
+box1 = 258 + 100 = 358
+box2 = 258 + 100 = 358
+p = 258 + 50 = 308
+*/
+
+.flex-grow > * {
+    border: 1px solid red !important;
+    flex-grow: 2;
+    flex-basis: 100px ;
+    padding: 1rem !important;
+}
+
+.flex-grow > p {
+    flex-grow: 1;
+    border: 1px solid green !important;
+    flex-basis: 50px;
+}
+
+/*como funciona flex-basis en el caso anterior donde los box duplican su tamaño y al p se le da 1 de flex-grow
+El contenedor wrapper tiene un ancho de 1024px
+a esa medida debo restarle la sumataria de bases flexibles de cada elemento (100 + 100 + 50 = 250) y el paddin-inline y los bordes-inline de cada elemento (padding: 16 * 2 * 3 = 96 y bordes: 6px (2px por cada elemento) : 1024-250-96-6
+y debo dividir el resultado entre la cantidad de secciones de flex-grow (2 + 2 + 1 = 5): (1024-250-96-6) /5 = 134.40
+al resultado debo multiplicarlo por el flex-grow debo sumarle cada base flexible de cada elemento, su padding y su border para obtener el ancho final:
+box1 = 134.40 *2 + 100 + 32 + 2 = 402.80
+box2 = 134.40 *2 + 100 + 32 + 2 = 402.80
+p = 134.40 + 50 + 32 + 2 = 218.40
+*/
+
+.flex-shrink {
+    display: flex;
+}
+
+.flex-shrink > img {
+    inline-size: 400px;
+    flex-shrink: 0;
+}
+
+.flex {
+    display: flex;
+    background: lightblue;
+}
+
+.flex > img {
+    inline-size: 400px;
+    flex-shrink: 0;
+}
+
+/* El div se va a agustar al contenudi delboton y no ocupara el size-inline restante el padre, para eso se usa la propiedad flex-grow: 1 y si no funciona se le debe cambiar el valor por defecto de flex-basis*/
+
+.flex > div {
+    border: 1px solid red;
+    flex-grow: 1;
+}
+
+/*propiedad resumida*/ 
+/*flex: 1
+hace referencia a:
+flex-grow:1
+flex-shrink: 1
+flex-basis: 0%*/

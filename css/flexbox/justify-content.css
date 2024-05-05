@@ -1,0 +1,76 @@
+.justifyContent-justify {
+    display: flex;
+    /* justify-content: space-between;  */
+    /* justify-content: space-around; le otorga  = margin-inline a todos los elementos, se suman los margin */
+    justify-content: space-evenly; /*le otorga = margin-inline a los elementos, los margin no se suman */
+    /* justify-content: flex-end; */
+    /* justify-content: flex-start; */
+    margin-block-end: 1rem;
+}
+
+.justifyContent-gap {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; /* quiebre de linea */
+    gap: 2rem;
+    border: 1px solid red;
+    margin-block-end: 1rem;
+}
+
+.justifyContent-align {
+    display: flex;
+    border: 1px solid red;
+    margin-block-end: 1rem;
+    block-size: 500px; /* si dejo solo esta propiedad los imagenes se estiran por align-item, su valor por defecto es stretch*/
+    /*align-items: stretch; valor por defecto - los hijos se estiran*/
+    align-items: flex-start;
+}
+
+
+.justifyContent-direction {
+    display: flex;
+    flex-direction: column; /*cambia el eje principal y por consiguiente el comportamiento de justify-content y align-items*/
+    border: 1px solid red;
+    margin-block-end: 1rem;
+    block-size: 1000px; /* si dejo solo esta propiedad los imagenes se estiran por align-item, su valor por defecto es stretch*/
+    /*align-items: stretch; valor por defecto - los hijos se estiran*/
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.justifyContent-direction img:nth-of-type(1) {
+    align-self: flex-end; /*alinear a cada hijo*/
+}
+
+.justifyContent-direction img:nth-of-type(2) {
+    align-self: center;
+}
+
+.justifyContent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    border: 1px solid red;
+    padding: 1rem;
+}
+
+.justifyContent-header img {
+    block-size: 100px;
+    border-radius: 50%;
+}
+
+.justifyContent-header ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.justifyContent-header a {
+    text-decoration: none;
+}
+
+
+

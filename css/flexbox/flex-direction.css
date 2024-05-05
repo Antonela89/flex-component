@@ -1,0 +1,12 @@
+/* .flexDirection {
+    display:flex;
+    flex-direction: row-reverse;
+} */
+
+.flexDirection {
+    display:flex;
+    flex-direction: column-reverse;
+    max-block-size: 200px;
+    overflow: auto; /* aparece el scroll solo si los hijos superan en el max block */
+} 
+
